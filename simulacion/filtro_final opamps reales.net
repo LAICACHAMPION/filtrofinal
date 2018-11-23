@@ -1,0 +1,55 @@
+* C:\Users\rochi\Google Drive\Materias\Teoría de circuitos\TPs\Filtro final\simulacion\filtro_final opamps reales.asc
+R1 s3 N002 {mc{1k2, tolr}}
+R2 0 N007 {mc{1k56, tolr}}
+C1 N002 s2 {mc{11n, tolc}}
+C2 N007 N002 10n
+R3 N008 0 {mc{1k, tolr}}
+R4 s3 N008 {mc{1k06, tolr}}
+R5 s2 N003 {mc{2k15, tolr}}
+R6 0 N005 {mc{24k3, tolr}}
+C3 N005 N003 {mc{10n, tolc}}
+C4 N003 s1 {mc{10n, tolc}}
+R9 N001 in {mc{4k5, tolr}}
+R11 N006 0 {mc{1k, preset}}
+R12 s1 N006 {mc{1k61, preset}}
+C5 0 N001 {mc{10n, tolc}}
+C6 N001 N004 {mc{10n, tolc}}
+R7 s1 N001 {mc{4k5, tolr}}
+R8 0 N004 {mc{4k5, tolr}}
+V1 in 0 SINE(0 1 1000) AC 1 Rser=50
+R13 N011 N009 {mc{54k9, tolr}}
+R14 N012 N011 {mc{9k79, preset}}
+R15 N009 s3 {mc{3k81, tolr}}
+R16 s4 N009 {mc{9k79, tolr}}
+R17 N014 N013 {mc{10k, tolr}}
+C7 N013 N012 {mc{10n, preset}}
+C9 N011 N009 {mc{10n, tolc}}
+R18 s4 N014 {mc{10k, tolr}}
+R10 N015 N010 {mc{58k1, tolr}}
+R19 N016 N015 {mc{10k35, tolr}}
+R20 N010 s4 {mc{4k, tolr}}
+R21 out N010 {mc{10k35, tolr}}
+R22 N018 N017 {mc{10k, tolr}}
+C8 N017 N016 {mc{1n, tolc}}
+C10 N015 N010 {mc{1n, tolc}}
+R23 out N018 {mc{10k, tolr}}
+XU3 N004 N006 vcc vee s1 TL082
+XU2 N005 s2 vcc vee s2 TL082
+XU1 N007 N008 vcc vee s3 TL082
+XU4 0 N009 vcc vee N011 TL082
+XU5 0 N012 vcc vee N013 TL082
+XU6 0 N014 vcc vee s4 TL082
+XU7 0 N018 vcc vee out TL082
+XU8 0 N016 vcc vee N017 TL082
+XU9 0 N010 vcc vee N015 TL082
+V2 vcc 0 15
+V3 0 vee 15
+.ac dec 1000 1k 20k
+.lib opamp.sub
+.step param run 1 50 1
+.param tolr = 0.01
+.param tolc = 0.05
+.param preset=0.0
+.lib TL082.LIB
+.backanno
+.end
