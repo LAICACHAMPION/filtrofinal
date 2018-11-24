@@ -1,4 +1,6 @@
+
 clearvars;
+clc;
 syms m nn positive;
 
 Q = 1.68;
