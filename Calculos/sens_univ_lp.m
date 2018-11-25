@@ -22,10 +22,9 @@ for i=1:nvars
     for j=1:nparams
         sens(i,j) = simplify(params(j)/vars(i) * diff(vars(i), params(j)));
 		sens(i,j)
-		latex(sens(i,j))
-		sprintf('i = %d, j = %d ',i,j)
+% 		latex(sens(i,j))
+% 		sprintf('i = %d, j = %d ',i,j)
 	end    
-	clc;
 end
 
 %{
