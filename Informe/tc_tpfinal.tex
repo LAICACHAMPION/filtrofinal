@@ -9,7 +9,18 @@
 
 \section{Análisis de sensibilidades}
 \subsection{Celda Sallen-Key Pasabandas}
+\begin{center}
+$w_0 = \sqrt{\frac{\frac{\mathrm{r1}}{\mathrm{r3}} + 1}{\mathrm{c1}\, \mathrm{c2}\, \mathrm{r1}\, \mathrm{r2}}}
+;$
+$Q = \frac{\sqrt{\frac{\mathrm{r1}}{\mathrm{r3}} + 1}}{\sqrt{\frac{\mathrm{c1}\, \mathrm{r1}}{\mathrm{c2}\, \mathrm{r2}}} - \left(\frac{\mathrm{r1}\, \mathrm{rb}}{\mathrm{r3}\, \mathrm{ra}} - 1\right)\, \sqrt{\frac{\mathrm{c2}\, \mathrm{r2}}{\mathrm{c1}\, \mathrm{r1}}} + 1}
+;$
+$G = \frac{\frac{\mathrm{rb}}{\mathrm{ra}} + 1}{\frac{\mathrm{r1}\, \left(\frac{\mathrm{c1}}{\mathrm{c2}} + 1\right)}{\mathrm{r2}} - \frac{\mathrm{r1}\, \mathrm{rb}}{\mathrm{r3}\, \mathrm{ra}} + 1}
+;$
+\end{center}
 
+Obtenemos analíticamente las expresiones de las sensibilidades relativas de Q para algunos componentes: \par
+
+$S^{}_{} =$ \par
 			 	\begin{table}[H] 
 				\centering
  				\begin{tabular}{||c c c c c c c c c||} 
@@ -17,7 +28,7 @@
 				  Parámetro& $R_1$ & $R_2$ & $R_3$ & $R_4$ & $r_a$ & $r_b$&$C_1$&$C_2$\\ [0.5ex] 
  					\hline\hline
 					 $S^G_x$& 1 & 0& -1& 0&0&0&0&0\\
-					 $S^{w_0}_x$& $- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 0&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\
+					 $S^{w_0}_x$& $- \frac{1}{2}$ &$- \frac{1}{2}$& $- \frac{1}{2}$& 0&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\
 					 $S^{Q}_x$&$- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 1&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\[1ex] 
 					\hline
 				\end{tabular}
@@ -29,15 +40,19 @@
 	\caption{Celda Sallen-Key Pasa-altos}
 	\label{fig:tpfinal_sallen_key_circ}
 \end{figure}
+
+Obtenemos analíticamente las expresiones de las sensibilidades relativas de Q para algunos componentes: \par
+$S^{Q}_{C_1} =-\frac{\mathrm{c1} - \mathrm{c2}}{2\, \left(\mathrm{c1} + \mathrm{c2}\right)}$ \par
+$S^{Q}_{C_2} = \frac{\mathrm{c1} - \mathrm{c2}}{2\, \left(\mathrm{c1} + \mathrm{c2}\right)}$ \par 
+El resto de las sensibilidades derivan directamente valores numéricos, por lo que reemplazando las expresiones anteriores por los valores teóricos de los componentes, obtenemos:\par
  	\begin{table}[H] 
 				\centering
- 				\begin{tabular}{||c c c c c c c c c||} 
+ 				\begin{tabular}{||c c c c c||} 
  					\hline
-				  Parámetro& $R_1$ & $R_2$ & $R_3$ & $R_4$ & $r_a$ & $r_b$&$C_1$&$C_2$\\ [0.5ex] 
+				  Parámetro& $R_1$ & $R_2$&$C_1$&$C_2$\\ [0.5ex] 
  					\hline\hline
-					 $S^G_x$& 1 & 0& -1& 0&0&0&0&0\\
-					 $S^{w_0}_x$& $- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 0&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\
-					 $S^{Q}_x$&$- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 1&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\[1ex] 
+					 $S^{w_0}_x$& $- \frac{1}{2}$ &$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\
+					 $S^{Q}_x$&$- \frac{1}{2}$ &$\frac{1}{2}$&$$&$$\\[1ex] 
 					\hline
 				\end{tabular}
 			\end{table}
@@ -48,15 +63,36 @@
 	\caption{Celda Sallen-Key Pasa-altos con factor ganancia}
 	\label{fig:tpfinal_sallen_key_gain_circ}
 \end{figure}
+
+Obtenemos analíticamente las expresiones de las sensibilidades relativas para Q y para G para algunos componentes: \par
+
+$S^{Q}_{R_1} = -\frac{\mathrm{c1}\, \mathrm{r1}\, \mathrm{r3} + \mathrm{c2}\, \mathrm{r1}\, \mathrm{r3} + \mathrm{c2}\, \mathrm{r2}\, \mathrm{r4}}{2\, \mathrm{c1}\, \mathrm{r1}\, \mathrm{r3} + 2\, \mathrm{c2}\, \mathrm{r1}\, \mathrm{r3} - 2\, \mathrm{c2}\, \mathrm{r2}\, \mathrm{r4}}
+$ \par
+$S^{Q}_{R_2} = \frac{\mathrm{c1}\, \mathrm{r1}\, \mathrm{r3} + \mathrm{c2}\, \mathrm{r1}\, \mathrm{r3} + \mathrm{c2}\, \mathrm{r2}\, \mathrm{r4}}{2\, \mathrm{c1}\, \mathrm{r1}\, \mathrm{r3} + 2\, \mathrm{c2}\, \mathrm{r1}\, \mathrm{r3} - 2\, \mathrm{c2}\, \mathrm{r2}\, \mathrm{r4}}
+$\par
+$S^{Q}_{R_3} = -\frac{\mathrm{c2}\, \mathrm{r2}\, \mathrm{r4}}{\mathrm{r3}\, \left(\mathrm{r1}\, \left(\mathrm{c1} + \mathrm{c2}\right) - \frac{\mathrm{c2}\, \mathrm{r2}\, \mathrm{r4}}{\mathrm{r3}}\right)}
+$\par
+$S^{Q}_{R_4} = \frac{\mathrm{c2}\, \mathrm{r2}\, \mathrm{r4}}{\mathrm{r3}\, \left(\mathrm{r1}\, \left(\mathrm{c1} + \mathrm{c2}\right) - \frac{\mathrm{c2}\, \mathrm{r2}\, \mathrm{r4}}{\mathrm{r3}}\right)}
+$\par
+$S^{Q}_{C_1} = -\frac{\mathrm{c1}\, \mathrm{r1}\, \mathrm{r3} - \mathrm{c2}\, \mathrm{r1}\, \mathrm{r3} + \mathrm{c2}\, \mathrm{r2}\, \mathrm{r4}}{2\, \mathrm{c1}\, \mathrm{r1}\, \mathrm{r3} + 2\, \mathrm{c2}\, \mathrm{r1}\, \mathrm{r3} - 2\, \mathrm{c2}\, \mathrm{r2}\, \mathrm{r4}}
+$\par
+$S^{Q}_{C_2} = \frac{\mathrm{c1}\, \mathrm{r1}\, \mathrm{r3} - \mathrm{c2}\, \mathrm{r1}\, \mathrm{r3} + \mathrm{c2}\, \mathrm{r2}\, \mathrm{r4}}{2\, \mathrm{c1}\, \mathrm{r1}\, \mathrm{r3} + 2\, \mathrm{c2}\, \mathrm{r1}\, \mathrm{r3} - 2\, \mathrm{c2}\, \mathrm{r2}\, \mathrm{r4}}
+$ \par
+
+$S^G_{R_3} = -\frac{\mathrm{r4}}{\mathrm{r3} + \mathrm{r4}}$\par
+$S^G_{R_4} = \frac{\mathrm{r4}}{\mathrm{r3} + \mathrm{r4}}$\par
+
+El resto de las sensibilidades derivan directamente valores numéricos, por lo que reemplazando las expresiones anteriores por los valores teóricos de los componentes, obtenemos:\par
+
 			 	\begin{table}[H] %datos thd simulado
 				\centering
- 				\begin{tabular}{||c c c c c c c c c||} 
+ 				\begin{tabular}{||c c c c c c c||} 
  					\hline
-				  Parámetro& $R_1$ & $R_2$ & $R_3$ & $R_4$ & $r_a$ & $r_b$&$C_1$&$C_2$\\ [0.5ex] 
+				  Parámetro& $R_1$ & $R_2$ & $R_3$ & $R_4$&$C_1$&$C_2$\\ [0.5ex] 
  					\hline\hline
-					 $S^G_x$& 1 & 0& -1& 0&0&0&0&0\\
-					 $S^{w_0}_x$& $- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 0&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\
-					 $S^{Q}_x$&$- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 1&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\[1ex] 
+					 $S^G_x$& 0& 0&&&0&0\\
+					 $S^{w_0}_x$& $- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 0&$- \frac{1}{2}$&$- \frac{1}{2}$\\
+					 %$S^{Q}_x$&$\\[1ex] 
 					\hline
 				\end{tabular}
 			\end{table}
