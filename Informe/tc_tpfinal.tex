@@ -5,66 +5,80 @@
 %capítulo
 \chapter{Filtro}
 
-\section{Introducción}
+\section{Introducción} 
 
 \section{Análisis de sensibilidades}
 \subsection{Celda Sallen-Key Pasabandas}
 
-			 	\begin{table}[H] 
-				\centering
+\begin{figure}[H]
+	\centering
+	\input{imagenes/sk_bp.tikz}
+	\caption{Celda Sallen-Key pasabanda}
+	\label{fig:sk_lp_schem}
+\end{figure}
+
+\begin{table}[H] 
+	\centering
  				\begin{tabular}{||c c c c c c c c c||} 
  					\hline
-				  Parámetro& $R_1$ & $R_2$ & $R_3$ & $R_4$ & $r_a$ & $r_b$&$C_1$&$C_2$\\ [0.5ex] 
+	  Parámetro& $R_1$ & $R_2$ & $R_3$ & $R_4$ & $r_a$ & $r_b$&$C_1$&$C_2$\\ [0.5ex] 
  					\hline\hline
-					 $S^G_x$& 1 & 0& -1& 0&0&0&0&0\\
-					 $S^{w_0}_x$& $- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 0&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\
-					 $S^{Q}_x$&$- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 1&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\[1ex] 
-					\hline
-				\end{tabular}
-			\end{table}
+		 $S^G_x$& 1 & 0& -1& 0&0&0&0&0\\
+		 $S^{w_0}_x$& $- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 0&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\
+		 $S^{Q}_x$&$- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 1&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\[1ex] 
+		\hline
+	\end{tabular}
+\end{table}
 \subsection{Celda Sallen-Key Pasa-altos}
-\begin{figure}[H]	
+\begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.5]{imagenes/sallen_key_circ.png}
-	\caption{Celda Sallen-Key Pasa-altos}
-	\label{fig:tpfinal_sallen_key_circ}
+	\input{imagenes/sk_hp.tikz}
+	\caption{Celda Sallen-Key pasaaltos}
+	\label{fig:sk_hp_schem}
 \end{figure}
- 	\begin{table}[H] 
-				\centering
- 				\begin{tabular}{||c c c c c c c c c||} 
- 					\hline
-				  Parámetro& $R_1$ & $R_2$ & $R_3$ & $R_4$ & $r_a$ & $r_b$&$C_1$&$C_2$\\ [0.5ex] 
- 					\hline\hline
-					 $S^G_x$& 1 & 0& -1& 0&0&0&0&0\\
-					 $S^{w_0}_x$& $- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 0&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\
-					 $S^{Q}_x$&$- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 1&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\[1ex] 
-					\hline
-				\end{tabular}
-			\end{table}
+
+
+
+\begin{table}[H] 
+	\centering
+ 	\begin{tabular}{||c c c c c c c c c||} 
+ 		\hline
+	 	Parámetro& $R_1$ & $R_2$ & $R_3$ & $R_4$ & $r_a$ & $r_b$&$C_1$&$C_2$\\ [0.5ex] 
+ 		\hline\hline
+		 $S^G_x$& 1 & 0& -1& 0&0&0&0&0\\
+		 $S^{w_0}_x$& $- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 0&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\
+		 $S^{Q}_x$&$- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 1&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\[1ex] 
+		\hline
+	\end{tabular}
+\end{table}
+
+
 \subsection{Celda Sallen-Key Pasa-altos con factor ganancia}
-\begin{figure}[H]	
+
+
+\begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.5]{imagenes/sallen_key_gain_circ.png}
-	\caption{Celda Sallen-Key Pasa-altos con factor ganancia}
-	\label{fig:tpfinal_sallen_key_gain_circ}
+	\input{imagenes/sk_hp_gain.tikz}
+	\caption{Celda Sallen-Key pasaaltos con factor de ganancia}
+	\label{fig:sk_hp_gain_schem}
 \end{figure}
-			 	\begin{table}[H] %datos thd simulado
-				\centering
- 				\begin{tabular}{||c c c c c c c c c||} 
- 					\hline
-				  Parámetro& $R_1$ & $R_2$ & $R_3$ & $R_4$ & $r_a$ & $r_b$&$C_1$&$C_2$\\ [0.5ex] 
- 					\hline\hline
-					 $S^G_x$& 1 & 0& -1& 0&0&0&0&0\\
-					 $S^{w_0}_x$& $- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 0&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\
-					 $S^{Q}_x$&$- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 1&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\[1ex] 
-					\hline
-				\end{tabular}
-			\end{table}
+\begin{table}[H] %datos thd simulado
+	\centering
+	\begin{tabular}{||c c c c c c c c c||} 
+ 		\hline
+	  	Parámetro& $R_1$ & $R_2$ & $R_3$ & $R_4$ & $r_a$ & $r_b$&$C_1$&$C_2$\\ [0.5ex] 
+ 		\hline\hline
+		$S^G_x$& 1 & 0& -1& 0&0&0&0&0\\
+		$S^{w_0}_x$& $- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 0&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\
+		$S^{Q}_x$&$- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 1&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\[1ex] 
+		\hline
+	\end{tabular}
+\end{table}
 \subsection{Celda Tow-Thomas}
 
 \begin{figure}[H]	
 	\centering
-	\includegraphics[scale=0.5]{imagenes/tow_thomas_circ.png}
+	\input{imagenes/tt_lp.tikz}
 	\caption{Celda Tow-Thomas}
 	\label{fig:tpfinal_tow_thomas_circ}
 \end{figure}
@@ -85,20 +99,23 @@ $Q = \sqrt{\frac{C_1\cdot r_b}{C_2\cdot R_1\cdot R_2\cdot ra}}; $
 $G = -\frac{R_1}{R_4}; $ 
 \end{center}
 
+
+
+
 Para la ganancia, obtenemos las sensibilidades con respecto a todos los componentes:\par
 
- 	\begin{table}[H] %datos thd simulado
-				\centering
- 				\begin{tabular}{||c c c c c c c c c||} 
- 					\hline
-				  Parámetro& $R_1$ & $R_2$ & $R_3$ & $R_4$ & $r_a$ & $r_b$&$C_1$&$C_2$\\ [0.5ex] 
- 					\hline\hline
-					 $S^G_x$& 1 & 0& -1& 0&0&0&0&0\\
-					 $S^{w_0}_x$& $- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 0&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\
-					 $S^{Q}_x$&$- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 1&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\[1ex] 
-					\hline
-				\end{tabular}
-			\end{table}
+\begin{table}[H] %datos thd simulado
+	\centering
+ 	\begin{tabular}{||c c c c c c c c c||} 
+ 		\hline
+	  	Parámetro& $R_1$ & $R_2$ & $R_3$ & $R_4$ & $r_a$ & $r_b$&$C_1$&$C_2$\\ [0.5ex] 
+ 		\hline\hline
+		$S^G_x$& 1 & 0& -1& 0&0&0&0&0\\
+		$S^{w_0}_x$& $- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 0&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\
+		$S^{Q}_x$&$- \frac{1}{2}$ &$- \frac{1}{2}$& 0& 1&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$&$- \frac{1}{2}$\\[1ex] 
+		\hline
+	\end{tabular}
+\end{table}
 			
 
 
