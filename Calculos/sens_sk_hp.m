@@ -46,8 +46,12 @@ end
 	c1: 
 -(c1 - c2)/(2*(c1 + c2))
 -\frac{\mathrm{c1} - \mathrm{c2}}{2\, \left(\mathrm{c1} + \mathrm{c2}\right)}
+remplazando por c1 = y c2 = 
+obtengo 
 	c2: 
 (c1 - c2)/(2*(c1 + c2))
 \frac{\mathrm{c1} - \mathrm{c2}}{2\, \left(\mathrm{c1} + \mathrm{c2}\right)}
+
+
 
 %}
